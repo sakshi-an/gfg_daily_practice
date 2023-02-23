@@ -34,3 +34,60 @@ void printTriangle(int n) {
     }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pattern 2 : Reverde Pyramid Triangle
+
+class Solution {
+
+    void printTriangle(int n) {
+        // code here
+        int k=n,o=1;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<i;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int j=0;j< 2*n-(2*i + 1);j++)
+            {
+                System.out.print("*");
+            }
+            for(int j=0;j<i;j++)
+            {
+                System.out.print(" ");
+            }
+            
+            System.out.println();
+            
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Largest Subarray with 0 sum :-
+class GfG
+{
+    int maxLen(int arr[], int n)
+    {
+        // Your code here
+        HashMap<Integer , Integer> map = new HashMap<>();
+        int sum =0;
+        map.put(sum,-1);
+        int maxi = 0;
+        for(int i=0;i<n;i++)
+        {
+            sum =sum+arr[i];
+            if(map.containsKey(sum)==false)
+            {
+                map.put(sum,i);
+            }
+            else
+            {
+                int length = i - map.get(sum);
+                maxi = Math.max(length,maxi);
+            }
+        }
+        
+        return maxi;
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
